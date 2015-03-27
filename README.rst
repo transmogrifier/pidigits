@@ -4,7 +4,7 @@ PiDigits
 *PiDigits* Implements the 'Unbounded Spigot Algorithm for the Digits of Pi' by
 Jeremy Gibbons. The paper describing this algorithm can be found at the
 following URL: `http://www.cs.ox.ac.uk/jeremy.gibbons/publications/spigot.pdf
-<http://www.cs.ox.ac.uk/jeremy.gibbons/publications/spigot.pdf>`
+<http://www.cs.ox.ac.uk/jeremy.gibbons/publications/spigot.pdf>`_
 
 Installation
 ------------
@@ -31,7 +31,7 @@ digits of Pi as needed. ::
     [3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5, 8, 9, 7, 9, 3, 2, 3, 8, 4]
 
 *Example*: Verify the `Feynman point 
-<http://en.wikipedia.org/wiki/Feynman_point>`. ::
+<http://en.wikipedia.org/wiki/Feynman_point>`_. ::
 
     >>> mypi = piGenerator()
     >>> first1001 = [mypi.next() for i in range(1001)]
