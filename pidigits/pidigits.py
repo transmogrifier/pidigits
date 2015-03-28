@@ -23,17 +23,21 @@
 #   following URL:
 #   http://www.cs.ox.ac.uk/jeremy.gibbons/publications/spigot.pdf
 
-def __comp((q,r,s,t),(u,v,w,x)):
+def __comp(a,b):
+    (q,r,s,t) = a
+    (u,v,w,x) = b
     return (q*u+r*w, q*v+r*x, s*u+t*w, s*v+t*x)
 
-def __extr((q,r,s,t), x):
+def __extr(a, x):
+    (q,r,s,t) = a
     return (q*x + r, s*x + t)
   
-def __prod ((q,r,s,t), n):
+def __prod (a, n):
+    (q,r,s,t) = a
     return __comp((10,-10*n, 0, 1),(q,r,s,t))
 
-def __safe((q,r,s,t), n):
-    a = __extr((q,r,s,t), 4)
+def __safe(b, n):
+    a = __extr(b, 4)
     return n == a[0]//a[1]
 
 def __cons(z,z1):
@@ -67,7 +71,6 @@ def getPi(n):
     mypi = piGenerator()
     result = []
     if n > 0:
-        result += [mypi.next() for i in range(n)]
+        result += [next(mypi) for i in range(n)]
     mypi.close()
     return result
-       
