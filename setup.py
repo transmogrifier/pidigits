@@ -15,14 +15,14 @@
 
 """Setup file for Pidigits"""
 
-from setuptools import setup
+from setuptools import setup, find_packages
 
 def readme():
     with open('README.rst') as f:
         return f.read()
 
 setup(name='pidigits',
-      version='0.1',
+      version='0.2',
       description=('Generate arbitrary number of digits of'
                    ' Pi using a streaming algorithm.'),
       long_description=readme(),
@@ -34,15 +34,14 @@ setup(name='pidigits',
         'Development Status :: 4 - Beta',
         'License :: OSI Approved :: Apache Software License',
         'Programming Language :: Python :: 2.7',
-        'Programming Language :: Python :: 3.3',
         'Topic :: Scientific/Engineering :: Mathematics',
         'Intended Audience :: Developers',
         'Intended Audience :: Science/Research',
         'Intended Audience :: End Users/Desktop'
       ],
       keywords='mathematics number_theory pi spigot_algorithm',
-      packages=['pidigits'],
+      packages=find_packages(exclude=['_tests']),#['pidigits'],
       install_requires=[],
-      test_suite='pidigits._tests',
+      test_suite='_tests',
       zip_safe=False)
 

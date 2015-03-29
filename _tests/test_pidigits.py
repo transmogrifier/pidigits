@@ -27,7 +27,7 @@ from pidigits import piGenerator
 class TestPiDigits(TestCase):
     
     mypi = piGenerator()
-    first1e4 = [mypi.next() for i in range(10001)] #10000 digits after decimal
+    first1e4 = [next(mypi) for i in range(10001)] #10000 digits after decimal
     
     def test_pidigits1(self):
         feynman = self.first1e4[762:768]

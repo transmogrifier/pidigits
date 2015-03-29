@@ -23,7 +23,7 @@
 #   following URL:
 #   http://www.cs.ox.ac.uk/jeremy.gibbons/publications/spigot.pdf
 
-def __comp(a,b):
+def __comp(a, b):
     (q,r,s,t) = a
     (u,v,w,x) = b
     return (q*u+r*w, q*v+r*x, s*u+t*w, s*v+t*x)
@@ -33,8 +33,7 @@ def __extr(a, x):
     return (q*x + r, s*x + t)
   
 def __prod (a, n):
-    (q,r,s,t) = a
-    return __comp((10,-10*n, 0, 1),(q,r,s,t))
+    return __comp((10,-10*n, 0, 1), a)
 
 def __safe(b, n):
     a = __extr(b, 4)
