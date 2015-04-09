@@ -51,7 +51,7 @@ Development
 -----------
 If you clone the `repository <https://github.com/transmogrifier/pidigits>`_ 
 and make any changes to the algorithm you can run the test cases in the _tests
- package included with the source to test your changes. 
+package included with the source to test your changes. 
 
 To run the tests, in the same directory as *setup.py*, first run: ::
 
