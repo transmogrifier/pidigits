@@ -23,16 +23,21 @@
 
 from unittest import TestCase
 from pidigits import piGenerator
+from timeit import default_timer
 
 class TestPiDigits(TestCase): 
 
     @classmethod    
     def setUpClass(cls):
         #Setup the first 10000 decimal digits
+        starttime = default_timer()
         mypi = piGenerator()
         #10000 digits after decimal
         cls.first1e4 = [next(mypi) for i in range(10001)]
         mypi.close()
+        elapsed = default_timer() - starttime
+        print("{0:.3f} seconds to generate 10,000 digits of Pi".
+                format(elapsed))
     
     def test_FeynmanPoint(self):
         feynman = self.first1e4[762:768]

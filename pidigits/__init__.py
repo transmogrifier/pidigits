@@ -19,5 +19,5 @@
 
 """
 
-from .pidigits import piGenerator
-from .pidigits import getPi
+from .pidigits_lambert import piGenerator
+from .pidigits_lambert import getPi

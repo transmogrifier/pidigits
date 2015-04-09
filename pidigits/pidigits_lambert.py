@@ -23,8 +23,8 @@
 #   following URL:
 #   http://www.cs.ox.ac.uk/jeremy.gibbons/publications/spigot.pdf
 #
-#   This module implementes the alogrithm outlined in section 5 of the paper
-#   based on the expression for Pi derived from Leibniz series.
+#   This module implements the algorithm outlined in section 6 of the paper
+#   using the continued fraction expression for Pi due to Lambert.
 
 def __comp(a, b):
     (q,r,s,t) = a
@@ -34,38 +34,42 @@ def __comp(a, b):
 def __extr(a, x):
     (q,r,s,t) = a
     return (q*x + r, s*x + t)
+
+def __extr1(a, x):
+    (q,r,s,t) = a
+    return (q*x + 2*r, s*x + 2*t)
   
 def __prod (a, n):
-    return __comp((10,-10*n, 0, 1), a)
+    return (__comp((10,-10*n, 0, 1), a[0]), a[1])
 
 def __safe(b, n):
-    a = __extr(b, 4)
+    x = 5*b[1] - 2
+    a = __extr1(b[0],x)
     return n == a[0]//a[1]
 
 def __cons(z,z1):
-    return __comp(z,z1)
+    return (__comp(z[0],z1), z[1]+1)
 
 def __next(z):
-    a = __extr(z,3)
+    x = 2*z[1] - 1
+    a = __extr(z[0],x)
     return a[0]//a[1]
 
 def __lfts(k):
-    return (k, 4*k+2, 0, 2*k+1)
+    return (2*k -1, k*k, 1, 0)
 
 def piGenerator():
     """A generator function that yields the digits of Pi
     """
-    k = 1
-    z = (1,0,0,1)
+    z = ((0,4,1,0),1)
     while True:
-        lft = __lfts(k)
+        lft = __lfts(z[1])
         n = int(__next(z))
         if __safe(z,n):
             z = __prod(z,n)
             yield n
         else:
             z = __cons(z,lft)
-            k += 1
 
 def getPi(n):
     """Returns a list containing first n digits of Pi
