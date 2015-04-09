@@ -26,7 +26,7 @@ digits of Pi as needed. ::
 
     >>> from pidigits import piGenerator
     >>> mypi = piGenerator()
-    >>> first20pi = [mypi.next() for i in range(20)]
+    >>> first20pi = [next(mypi) for i in range(20)]
     >>> first20pi
     [3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5, 8, 9, 7, 9, 3, 2, 3, 8, 4]
 
@@ -34,7 +34,7 @@ digits of Pi as needed. ::
 <http://en.wikipedia.org/wiki/Feynman_point>`_. ::
 
     >>> mypi = piGenerator()
-    >>> first1001 = [mypi.next() for i in range(1001)]
+    >>> first1001 = [next(mypi) for i in range(1001)]
     >>> feynman = first1001[762:768]
     >>> print feynman
     [9, 9, 9, 9, 9, 9]
@@ -46,6 +46,22 @@ digits of Pi. ::
     >>> first20pi = getPi(20)
     >>> first20pi
     [3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5, 8, 9, 7, 9, 3, 2, 3, 8, 4]
+
+Development
+-----------
+If you download the source distribution or clone the `repository 
+<https://github.com/transmogrifier/pidigits>`_ and make
+any changes to the algorithm you can run the test cases in the _tests package
+included with the source to test your changes. 
+
+To run the tests, in the same directory as *setup.py*, first run: ::
+
+    >>>python setup.py develop
+
+This will install the package in the 'development' mode. Then run the
+test cases: ::
+
+    >>>python setup.py test
 
 License
 -------
