@@ -22,7 +22,7 @@ def readme():
         return f.read()
 
 setup(name='pidigits',
-      version='0.2',
+      version='0.3',
       description=('Generate arbitrary number of digits of'
                    ' Pi using a streaming algorithm.'),
       long_description=readme(),
