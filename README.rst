@@ -55,12 +55,12 @@ and make any changes to the algorithm you can run the test cases in the _tests
 
 To run the tests, in the same directory as *setup.py*, first run: ::
 
-    >>>python setup.py develop
+    >>> python setup.py develop
 
 This will install the package in the 'development' mode. Then run the
 test cases: ::
 
-    >>>python setup.py test
+    >>> python setup.py test
 
 License
 -------
