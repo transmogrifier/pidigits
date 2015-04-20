@@ -59,7 +59,7 @@ def __lfts(k):
     j = 3*(3*k + 1)*(3*k + 2)
     return (k*(2*k -1), j*(5*k -2), 0, j)
 
-def piGenerator():
+def piGenGosper():
     """A generator function that yields the digits of Pi
     """
     z = ((1,0,0,1),1)
@@ -72,10 +72,10 @@ def piGenerator():
         else:
             z = __cons(z,lft)
 
-def getPi(n):
+def getPiGosper(n):
     """Returns a list containing first n digits of Pi
     """
-    mypi = piGenerator()
+    mypi = piGenGosper()
     result = []
     if n > 0:
         result += [next(mypi) for i in range(n)]

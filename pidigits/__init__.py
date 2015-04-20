@@ -19,5 +19,9 @@
 
 """
 
-from .pidigits_lambert import piGenerator
-from .pidigits_lambert import getPi
+from .pidigits_lambert import piGenLambert as piGenerator
+from .pidigits_lambert import getPiLambert as getPi
+from .pidigits import piGenLeibniz
+from .pidigits import getPiLeibniz
+from .pidigits_gosper import piGenGosper
+from .pidigits_gosper import getPiGosper

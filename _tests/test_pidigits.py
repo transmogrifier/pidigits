@@ -23,6 +23,8 @@
 
 from unittest import TestCase
 from pidigits import piGenerator
+from pidigits import piGenLeibniz
+from pidigits import piGenGosper
 from timeit import default_timer
 
 class TestPiDigits(TestCase): 
@@ -63,4 +65,81 @@ class TestPiDigits(TestCase):
         #From OEIS A099294
         count3 = sum(1 for n in self.first1e4 if n == 3)
         self.assertEqual(count3,975)
+
+class TestPiDigitsLeibniz(TestCase): 
+
+    @classmethod    
+    def setUpClass(cls):
+        #Setup the first 10000 decimal digits
+        starttime = default_timer()
+        mypi = piGenLeibniz()
+        #10000 digits after decimal
+        cls.first1e4 = [next(mypi) for i in range(10001)]
+        mypi.close()
+        elapsed = default_timer() - starttime
+        print("{0:.3f} seconds to generate 10,000 digits of Pi".
+                format(elapsed))
     
+    def test_FeynmanPoint(self):
+        feynman = self.first1e4[762:768]
+        self.assertEqual(feynman,[9,9,9,9,9,9]) #Feynman point
+    
+    def test_Last10Digits(self):
+        #Last 10 digits
+        self.assertEqual(self.first1e4[-11:-1],[5,5,2,5,6,3,7,5,6,7])
+        
+    def test_666(self):
+        #From OEIS A083625
+        #Occurence of 666
+        self.assertEqual(self.first1e4[2440:2443],[6,6,6])
+    
+    def test_Count1s(self):
+        #Test number of 1s
+        #From OEIS A099292
+        count1 = sum(1 for n in self.first1e4 if n == 1)
+        self.assertEqual(count1,1026)
+    
+    def test_Count3s(self):
+        #Test number of 3s
+        #From OEIS A099294
+        count3 = sum(1 for n in self.first1e4 if n == 3)
+        self.assertEqual(count3,975)
+
+class TestPiDigitsGosper(TestCase): 
+
+    @classmethod    
+    def setUpClass(cls):
+        #Setup the first 10000 decimal digits
+        starttime = default_timer()
+        mypi = piGenGosper()
+        #10000 digits after decimal
+        cls.first1e4 = [next(mypi) for i in range(10001)]
+        mypi.close()
+        elapsed = default_timer() - starttime
+        print("{0:.3f} seconds to generate 10,000 digits of Pi".
+                format(elapsed))
+    
+    def test_FeynmanPoint(self):
+        feynman = self.first1e4[762:768]
+        self.assertEqual(feynman,[9,9,9,9,9,9]) #Feynman point
+    
+    def test_Last10Digits(self):
+        #Last 10 digits
+        self.assertEqual(self.first1e4[-11:-1],[5,5,2,5,6,3,7,5,6,7])
+        
+    def test_666(self):
+        #From OEIS A083625
+        #Occurence of 666
+        self.assertEqual(self.first1e4[2440:2443],[6,6,6])
+    
+    def test_Count1s(self):
+        #Test number of 1s
+        #From OEIS A099292
+        count1 = sum(1 for n in self.first1e4 if n == 1)
+        self.assertEqual(count1,1026)
+    
+    def test_Count3s(self):
+        #Test number of 3s
+        #From OEIS A099294
+        count3 = sum(1 for n in self.first1e4 if n == 3)
+        self.assertEqual(count3,975)

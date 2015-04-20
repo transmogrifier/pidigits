@@ -52,7 +52,7 @@ def __next(z):
 def __lfts(k):
     return (k, 4*k+2, 0, 2*k+1)
 
-def piGenerator():
+def piGenLeibniz():
     """A generator function that yields the digits of Pi
     """
     k = 1
@@ -67,10 +67,10 @@ def piGenerator():
             z = __cons(z,lft)
             k += 1
 
-def getPi(n):
+def getPiLeibniz(n):
     """Returns a list containing first n digits of Pi
     """
-    mypi = piGenerator()
+    mypi = piGenLeibniz()
     result = []
     if n > 0:
         result += [next(mypi) for i in range(n)]

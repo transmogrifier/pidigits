@@ -58,7 +58,7 @@ def __next(z):
 def __lfts(k):
     return (2*k -1, k*k, 1, 0)
 
-def piGenerator():
+def piGenLambert():
     """A generator function that yields the digits of Pi
     """
     z = ((0,4,1,0),1)
@@ -71,10 +71,10 @@ def piGenerator():
         else:
             z = __cons(z,lft)
 
-def getPi(n):
+def getPiLambert(n):
     """Returns a list containing first n digits of Pi
     """
-    mypi = piGenerator()
+    mypi = piGenLambert()
     result = []
     if n > 0:
         result += [next(mypi) for i in range(n)]
