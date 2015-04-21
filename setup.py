@@ -22,7 +22,7 @@ def readme():
         return f.read()
 
 setup(name='pidigits',
-      version='0.3',
+      version='0.4',
       description=('Generate arbitrary number of digits of'
                    ' Pi using a streaming algorithm.'),
       long_description=readme(),
@@ -31,7 +31,7 @@ setup(name='pidigits',
       author_email='transmogrifier@gmail.com',
       license='Apache License 2.0',
       classifiers=[
-        'Development Status :: 4 - Beta',
+        'Development Status :: 5 - Production/Stable',
         'License :: OSI Approved :: Apache Software License',
         'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3.4',

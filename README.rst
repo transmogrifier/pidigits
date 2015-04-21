@@ -4,7 +4,7 @@ PiDigits
 *PiDigits* Implements the 'Unbounded Spigot Algorithm for the Digits of Pi' by
 Jeremy Gibbons. The paper describing this algorithm can be found at the
 following URL: `http://www.cs.ox.ac.uk/jeremy.gibbons/publications/spigot.pdf
-<http://www.cs.ox.ac.uk/jeremy.gibbons/publications/spigot.pdf>`_
+<http://www.cs.ox.ac.uk/jeremy.gibbons/publications/spigot.pdf>`_.
 
 Installation
 ------------
@@ -14,15 +14,15 @@ Installation
 
    >>> pip install --upgrade pidigits
 
-To uninstall using `pip
-<http://www.pip-installer.org/en/latest/index.html>`_. ::
+To uninstall using `pip`_. ::
 
    >>> pip uninstall pidigits
 
 Usage
 -----
 PiDigits provides a generator function named *piGenerator* that yields the 
-digits of Pi as needed. ::
+digits of Pi as needed. The streaming algorithm based on Lambert's expression 
+is used for the generator function. ::
 
     >>> from pidigits import piGenerator
     >>> mypi = piGenerator()
@@ -47,6 +47,11 @@ digits of Pi. ::
     >>> first20pi
     [3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5, 8, 9, 7, 9, 3, 2, 3, 8, 4]
 
+Alternate implementations of streaming algorithms based on Leibniz series and 
+Gosper's series are also available as generator functions *piGenLeibniz* and
+*piGenGosper* and corresponding *getPiLeibniz* and *getPiGosper* functions.
+These implementations are slower than the one based on Lambert's series.
+
 Development
 -----------
 If you clone the `repository <https://github.com/transmogrifier/pidigits>`_ 
@@ -61,6 +66,9 @@ This will install the package in the 'development' mode. Then run the
 test cases: ::
 
     >>> python setup.py test
+
+`Bug reports<https://github.com/transmogrifier/pidigits/issues>`_ or  
+suggestions are most welcome.
 
 License
 -------
