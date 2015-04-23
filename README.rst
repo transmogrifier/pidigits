@@ -2,15 +2,12 @@ PiDigits
 ********
 
 *PiDigits* Implements the 'Unbounded Spigot Algorithm for the Digits of Pi' by
-Jeremy Gibbons. The paper describing this algorithm can be found at the
-following URL: `http://www.cs.ox.ac.uk/jeremy.gibbons/publications/spigot.pdf
-<http://www.cs.ox.ac.uk/jeremy.gibbons/publications/spigot.pdf>`_.
+Jeremy Gibbons. The paper describing this algorithm can be found at this 
+`URL`_.
 
 Installation
 ------------
-*pidigits* is avalaible through Python Package Index (`PyPI 
-<https://pypi.python.org/pypi>`_) using `pip 
-<http://www.pip-installer.org/en/latest/index.html>`_. ::
+*pidigits* is avalaible through Python Package Index (`PyPI`_) using `pip`_. ::
 
    >>> pip install --upgrade pidigits
 
@@ -30,8 +27,7 @@ is used for the generator function. ::
     >>> first20pi
     [3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5, 8, 9, 7, 9, 3, 2, 3, 8, 4]
 
-*Example*: Verify the `Feynman point 
-<http://en.wikipedia.org/wiki/Feynman_point>`_. ::
+**Example**: Verify the `Feynman point`_. ::
 
     >>> mypi = piGenerator()
     >>> first1001 = [next(mypi) for i in range(1001)]
@@ -54,9 +50,9 @@ These implementations are slower than the one based on Lambert's series.
 
 Development
 -----------
-If you clone the `repository <https://github.com/transmogrifier/pidigits>`_ 
-and make any changes to the algorithm you can run the test cases in the _tests
-package included with the source to test your changes. 
+If you clone the repository (`GitHub`_, `BitBucket`_) and make any changes to 
+the algorithm you can run the test cases in the _tests package included with 
+the source to test your changes. 
 
 To run the tests, in the same directory as *setup.py*, first run: ::
 
@@ -67,10 +63,17 @@ test cases: ::
 
     >>> python setup.py test
 
-`Bug reports<https://github.com/transmogrifier/pidigits/issues>`_ or  
-suggestions are most welcome.
+`Bug reports`_ or suggestions are most welcome.
 
 License
 -------
-pidigits is licensed under `Apache License 2.0 
-<https://www.apache.org/licenses/LICENSE-2.0.html>`_.
+pidigits is licensed under `Apache License 2.0`_.
+
+.. _URL: http://www.cs.ox.ac.uk/jeremy.gibbons/publications/spigot.pdf
+.. _PyPI: https://pypi.python.org/pypi
+.. _pip: https://pip.pypa.io
+.. _Apache License 2.0: https://www.apache.org/licenses/LICENSE-2.0.html
+.. _Feynman point: http://en.wikipedia.org/wiki/Feynman_point
+.. _GitHub: https://github.com/transmogrifier/pidigits
+.. _BitBucket: https://bitbucket.org/transmogrifier/pidigits
+.. _Bug reports: https://github.com/transmogrifier/pidigits/issues
