@@ -25,3 +25,7 @@ from .pidigits import piGenLeibniz
 from .pidigits import getPiLeibniz
 from .pidigits_gosper import piGenGosper
 from .pidigits_gosper import getPiGosper
+from .taudigits import tauGenLeibniz
+from .taudigits import getTauLeibniz
+from .taudigits_lambert import tauGenLambert as tauGenerator
+from .taudigits_lambert import getTauLambert as getTau
