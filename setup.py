@@ -22,9 +22,9 @@ def readme():
         return f.read()
 
 setup(name='pidigits',
-      version='0.4',
-      description=('Generate arbitrary number of digits of'
-                   ' Pi using a streaming algorithm.'),
+      version='0.5',
+      description=('Generate arbitrary number of digits of Pi  or Tau using a '
+                   'streaming algorithm.'),
       long_description=readme(),
       url='https://github.com/transmogrifier/pidigits',
       author='Sameer Marathe',
@@ -45,4 +45,3 @@ setup(name='pidigits',
       install_requires=[],
       test_suite='_tests',
       zip_safe=False)
-
